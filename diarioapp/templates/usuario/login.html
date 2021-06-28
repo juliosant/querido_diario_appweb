@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load bootstrap %}
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    
+    <title>.:Login</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
+    body{
+        background-color: rgb(247, 238, 226);
+    }
+
+    #login_form{
+        background-color: darkcyan;
+    }
+
+    #login_form .d-flex button{
+        color: darkcyan;
+    }
+
+    #login_form .d-flex button:hover{
+        color: rgb(255, 255, 255);
+        background-color: darkcyan;
+        transition: 0.5s;
+    }
+
+    .display-2{
+        color: darkcyan;
+        font-family: 'Viaoda Libre', cursive;
+    }
+
+    #login_form .d-flex a{
+        color: white;
+        text-decoration: none;
+    }
+
+
+</style>
+
+<body>
+    <div class="container mt-5 mb-4 pt-5 mx-auto text-center col-lg-5">
+        <h1 class="display-2">Querido diário</h1>
+    </div>
+    <div id="login_form" class="container mx-auto col-lg-3 rounded p-5 pt-5 pb-4 pt-3 pb-3">
+        
+        <form method="POST">
+            {% csrf_token %}
+            <div class="h3 mb-4 text-white">
+                {{form|bootstrap}}
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-light fw-bold">Fazer Login</button>
+            </div>
+        </form>
+        <div class="d-flex justify-content-center mt-3 mb-0">
+            <a href="{% url 'create_user' %}" id="new_account" class="h5"> Criar conta</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

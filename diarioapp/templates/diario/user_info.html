@@ -1,0 +1,23 @@
+{% extends 'base/model.html' %}
+{% load bootstrap %}
+{% block content %}
+<div class="col-lg-9">
+    <div class="card mb-2" style="background-color: rgb(247, 238, 226);">
+        <div class="card-header">
+            Nome do usuário:
+        </div>
+        <div class="card-body">
+            {{ request.user }}
+        </div>
+    </div>
+    <div class="card" style="background-color: rgb(247, 238, 226);">
+        <div class="card-header">
+            Número de diários criados:
+        </div>
+        <div class="card-body">
+            {{ diario_qtd }}
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
